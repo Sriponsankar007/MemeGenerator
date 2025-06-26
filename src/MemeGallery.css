@@ -1,0 +1,96 @@
+.meme-gallery {
+  max-width: 1100px;
+  margin: 48px auto;
+  padding: 32px 28px 28px 28px;
+  background: linear-gradient(135deg, #f8fafc 0%, #e3e9f7 100%);
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30, 42, 73, 0.13), 0 1.5px 4px rgba(30, 42, 73, 0.07);
+}
+.meme-gallery h2 {
+  text-align: center;
+  margin-bottom: 28px;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a237e;
+  letter-spacing: 1px;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+.meme-card {
+  position: relative;
+  background: #222;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(30, 42, 73, 0.10);
+  transition: transform 0.15s, box-shadow 0.15s;
+  cursor: pointer;
+}
+.meme-card:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 8px 32px rgba(25, 118, 210, 0.13);
+}
+.meme-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #e0e6f7;
+}
+.meme-text {
+  position: absolute;
+  left: 50%;
+  width: 92%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: Impact, Arial, sans-serif;
+  font-size: 1.25rem;
+  text-shadow: 2px 2px 8px #000, 0 0 2px #1976d2;
+  text-align: center;
+  padding: 6px 0;
+  pointer-events: none;
+  letter-spacing: 1px;
+  font-weight: 700;
+  user-select: none;
+}
+.meme-text.top {
+  top: 10px;
+}
+.meme-text.bottom {
+  bottom: 10px;
+}
+.meme-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 10px 0 8px 0;
+}
+.meme-actions button {
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 18px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.meme-actions button:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+}
+@media (max-width: 700px) {
+  .meme-gallery {
+    padding: 12px 2vw 12px 2vw;
+    max-width: 99vw;
+  }
+  .gallery-grid {
+    gap: 12px;
+  }
+  .meme-gallery h2 {
+    font-size: 1.3rem;
+  }
+} 

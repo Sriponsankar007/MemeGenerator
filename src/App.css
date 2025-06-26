@@ -1,38 +1,224 @@
-.App {
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --accent: #60a5fa;
+  --bg: #f8fafc;
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
+  --card-bg: #fff;
+  --shadow: 0 6px 32px rgba(0,0,0,0.13);
+  --radius: 18px;
+  --font-main: 'Montserrat', 'Roboto', 'Open Sans', 'Lato', 'Oswald', 'Raleway', 'Poppins', 'Merriweather', 'Nunito', 'Bebas Neue', 'Anton', 'Pacifico', 'Dancing Script', 'Abril Fatface', 'Bangers', 'Bitter', 'Caveat', 'Comfortaa', 'Cormorant', 'Fira Sans', 'Inconsolata', 'Josefin Sans', 'Kalam', 'Lobster', 'Maven Pro', 'Muli', 'Orbitron', 'PT Sans', 'Quicksand', 'Rubik', 'Satisfy', 'Shadows Into Light', 'Slabo 27px', 'Source Sans Pro', 'Teko', 'Titillium Web', 'Ubuntu', 'Varela Round', 'Yanone Kaffeesatz', 'Zilla Slab', Arial, sans-serif;
+}
+
+body {
+  background: linear-gradient(120deg, #e3e9f7 0%, #f8fafc 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  color: #23233b;
+  transition: background 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.app-container {
+  max-width: 540px;
+  margin: 64px auto 0 auto;
+  padding: 40px 32px 32px 32px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  font-family: var(--font-main);
+  position: relative;
+}
+
+header {
+  font-family: 'Bebas Neue', 'Montserrat', 'Oswald', 'Roboto', Arial, sans-serif;
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: var(--primary-dark);
+  margin-bottom: 18px;
+  text-shadow: 0 2px 8px #e0e7ff;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-bottom: 32px;
+  align-items: center;
+}
+
+.controls input[type="text"] {
+  padding: 12px 16px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: 1.5px solid #bfc8e6;
+  background: #f4f7ff;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+  width: 240px;
+  box-shadow: 0 1px 4px rgba(60,60,100,0.04);
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+}
+
+.controls input[type="text"]:focus {
+  border: 1.5px solid var(--primary);
+  box-shadow: 0 2px 8px #c7d2fe;
+}
+
+.controls button {
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(99,102,241,0.13);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.controls button:hover, .controls button:focus {
+  background: linear-gradient(90deg, var(--primary-dark) 0%, #2563eb 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(99,102,241,0.18);
+}
+
+.controls label {
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3b3b5c;
+}
+
+.controls input[type="color"] {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.meme-preview {
+  min-height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f1f5f9;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(60,60,100,0.07);
+  padding: 24px 0;
+  margin-bottom: 12px;
+}
+
+.meme-image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(60,60,100,0.13);
+  background: #fff;
+}
+
+.meme-image {
+  max-width: 100%;
+  max-height: 400px;
+  display: block;
+  border-radius: 12px;
+  background: #e0e7ff;
+}
+
+.meme-text {
+  position: absolute;
+  left: 50%;
+  width: 92%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    2px 0px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000;
+  pointer-events: none;
+  padding: 0 4px;
+  word-break: break-word;
+  font-family: 'Anton', 'Bebas Neue', 'Impact', 'Montserrat', 'Oswald', Arial, sans-serif;
+}
+
+.meme-text.top {
+  top: 18px;
+}
+
+.meme-text.bottom {
+  bottom: 18px;
+}
+
+footer {
+  margin-top: 40px;
+  padding: 18px 0 0 0;
+  color: #888;
+  font-size: 1rem;
+  border-top: 1px solid #eee;
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  background: none;
+}
+
+@media (max-width: 700px) {
+  .app-container {
+    max-width: 99vw;
+    padding: 8vw 2vw 8vw 2vw;
+  }
+  .controls input[type="text"] {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .meme-image {
+    max-width: 98vw;
+    max-height: 60vw;
+  }
+  .meme-text {
+    font-size: 1.2rem;
+  }
+}
+
+.hero-section {
+  margin-bottom: 32px;
+  padding: 32px 0 0 0;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.hero-title {
+  font-family: 'Bebas Neue', 'Montserrat', 'Oswald', Arial, sans-serif;
+  font-size: 3.2rem;
+  font-weight: 900;
+  color: var(--primary);
+  margin-bottom: 10px;
+  letter-spacing: 3px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-desc {
+  font-family: 'Montserrat', 'Roboto', Arial, sans-serif;
+  font-size: 1.25rem;
+  color: #4b5563;
+  margin-bottom: 0;
+  font-weight: 500;
 }

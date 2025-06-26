@@ -1,0 +1,255 @@
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #e3e9f7 0%, #f8fafc 100%);
+}
+.login-form {
+  background: #fff;
+  padding: 36px 32px 28px 32px;
+  border-radius: 16px;
+  box-shadow: 0 6px 32px rgba(30, 42, 73, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+}
+.login-form h2 {
+  margin-bottom: 18px;
+  color: #1976d2;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.login-form input {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1.5px solid #bfc9e0;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  width: 100%;
+  background: #f5f7fa;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.login-form input:focus {
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 0 0 2px #1976d233;
+}
+.login-form button {
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.login-form button:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+}
+
+.login-flip-bg {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(120deg, #e3e9f7 0%, #f8fafc 100%);
+}
+.panda-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.panda {
+  position: relative;
+  width: 120px;
+  height: 110px;
+  margin-bottom: -40px;
+  z-index: 2;
+}
+.panda .ear {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  background: #232323;
+  border-radius: 50%;
+  top: 0;
+  z-index: 1;
+}
+.panda .ear.left { left: -18px; }
+.panda .ear.right { right: -18px; }
+.panda .face {
+  position: absolute;
+  left: 0; right: 0; top: 12px;
+  width: 120px;
+  height: 90px;
+  background: #fff;
+  border-radius: 60px 60px 60px 60px / 55px 55px 60px 60px;
+  z-index: 2;
+  box-shadow: 0 2px 12px rgba(30,42,73,0.10);
+  border: 2px solid #e0e6f7;
+}
+.panda .eye {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  background: #232323;
+  border-radius: 50%;
+  top: 36px;
+}
+.panda .eye.left { left: 22px; }
+.panda .eye.right { right: 22px; }
+.panda .nose {
+  position: absolute;
+  left: 50%;
+  top: 62px;
+  width: 16px;
+  height: 10px;
+  background: #232323;
+  border-radius: 50% 50% 60% 60%;
+  transform: translateX(-50%);
+}
+.panda .mouth {
+  position: absolute;
+  left: 50%;
+  top: 74px;
+  width: 28px;
+  height: 16px;
+  border-bottom: 3px solid #232323;
+  border-radius: 0 0 16px 16px;
+  transform: translateX(-50%);
+}
+.panda .paws {
+  position: absolute;
+  left: 50%;
+  top: 92px;
+  width: 80px;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+.panda .paw {
+  width: 32px;
+  height: 32px;
+  background: #232323;
+  border-radius: 50%;
+  border: 2px solid #e0e6f7;
+  box-shadow: 0 2px 8px rgba(30,42,73,0.10);
+}
+
+.flip-card {
+  background: transparent;
+  width: 340px;
+  height: 320px;
+  perspective: 1200px;
+  margin-top: 0;
+  z-index: 4;
+}
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.7s cubic-bezier(.4,2,.6,1);
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 6px 32px rgba(30, 42, 73, 0.13);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 32px 28px 32px;
+}
+.flip-card-front {
+  z-index: 2;
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  z-index: 3;
+}
+.login-form h2 {
+  margin-bottom: 18px;
+  color: #1976d2;
+  font-size: 1.7rem;
+  font-weight: 700;
+}
+.login-form input {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1.5px solid #bfc9e0;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  width: 100%;
+  background: #f5f7fa;
+  transition: border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.login-form input:focus {
+  border: 1.5px solid #1976d2;
+  box-shadow: 0 0 0 2px #1976d233;
+}
+.login-form button {
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+  box-shadow: 0 2px 8px rgba(25, 118, 210, 0.08);
+}
+.login-form button:hover {
+  background: linear-gradient(90deg, #1565c0 0%, #1976d2 100%);
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(25, 118, 210, 0.13);
+}
+.flip-link {
+  margin-top: 10px;
+  color: #1976d2;
+  font-size: 1rem;
+  text-align: center;
+}
+.flip-link span {
+  color: #1565c0;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+@media (max-width: 500px) {
+  .flip-card {
+    width: 98vw;
+    height: 340px;
+  }
+  .flip-card-front, .flip-card-back {
+    padding: 18px 6vw 18px 6vw;
+  }
+  .panda {
+    width: 80px;
+    height: 70px;
+  }
+  .panda .face {
+    width: 80px;
+    height: 60px;
+  }
+} 
